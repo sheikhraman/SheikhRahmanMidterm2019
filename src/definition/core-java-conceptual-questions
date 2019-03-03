@@ -146,7 +146,7 @@ A. gson jar, java-json jar,javax.json, mongo-java driver, mysql-connector, testn
 what is dependency injection in java?
 Dependency injection is a technique where by one object supplies the dependencies of other object..
 What is static binding and dynamic binding?
-A. static binding in java occurs during compile time when dynamic binding occurs during run time.
+A. static binding in java occurs d0+6uring compile time when dynamic binding occurs during run time.
 
 
 
