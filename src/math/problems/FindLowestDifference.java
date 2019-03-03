@@ -50,13 +50,9 @@ public class FindLowestDifference {
             else
 
                 b++;
-
         }
 
         return result;
-
-
-
 
     }
 
