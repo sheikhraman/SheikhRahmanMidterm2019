@@ -1,11 +1,6 @@
 Please answer the below core-java Questions:
-
 What is programing language?
 A. A programmig language is a set of commands , instructions and other syntax usd to instruct the computer to perform varius tasks.
-
-
-
-
 What jdk contains or composed of and define each components?
 A.
 The Java Development Kit or JDK, is a comprehensive set of tools, utilities , documentation, and simple code for developing java program.
@@ -147,8 +142,11 @@ A. Selenium, Arquillian, Jtest,Grinder ,testNg, Junit, etc.
 Difference between jUnit and testNG?
 TestNg is testing framework , inspired from Juinit and Nuinit but introducing some new functional the amake more powreful and easier.
 What are the dependencies for this project?
+A. gson jar, java-json jar,javax.json, mongo-java driver, mysql-connector, testng.
 what is dependency injection in java?
+Dependency injection is a technique where by one object supplies the dependencies of other object..
 What is static binding and dynamic binding?
+A. static binding in java occurs during compile time when dynamic binding occurs during run time.
 
 
 
