@@ -15,13 +15,15 @@ public class Factorial {
 
         Factorial ft =new Factorial();
         ft.factorial(fac);
+        System.out.println(fac);
 
     }
 
-    private void factorial(int num) {
+    public static int  factorial(int num) {
         if(num>=1) {
             fac = fac * num;
             factorial(num - 1);
         }
+        return fac;
     }
 }
