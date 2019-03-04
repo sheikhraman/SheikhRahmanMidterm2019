@@ -195,7 +195,7 @@ public class Sort {
         //return list;
     }
     public void sort(int[]arr){
-      int 1 = arr.length;
+      //int 1 = arr.length;
       for(int i=1/2-1;i>=0;i--){
           heapify(arr,1,i);
       }
