@@ -22,5 +22,6 @@ public interface Employee {
 	
 	//employee benefit
 	public void benefitLayout();
-
+	//employee severance package
+	public void severance();
 }
