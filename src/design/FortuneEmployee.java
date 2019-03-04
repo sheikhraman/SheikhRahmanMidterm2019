@@ -1,5 +1,7 @@
 package design;
 
+import databases.ConnectToSqlDB;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -52,6 +54,8 @@ public class FortuneEmployee {
 		empInfo.put(2, emp1);
 		List empInfos = new ArrayList();
 		empInfos =emp1;
+		//ConnectToSqlDB connect = new ConnectToSqlDB();
+		//ConnectToSqlDB.connectToSqlDatabase();
 
 	}
 }
