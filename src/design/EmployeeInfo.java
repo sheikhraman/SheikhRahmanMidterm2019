@@ -110,6 +110,12 @@ public class EmployeeInfo extends AbstractClass{
 	public void setRating(int rating) {
 		this.rating = rating;
 	}
+	public static String getCompanyName(){
+		return companyName;
+	}
+	public static void setCompanyName(String companyName){
+		EmployeeInfo.companyName =companyName;
+	}
 	@Override
 	public int employeeId() {
 		return 0;
@@ -143,7 +149,7 @@ public class EmployeeInfo extends AbstractClass{
 	public void annualSalary(){
 		double yearlySalary =salary*12;
 		System.out.println(yearlySalary);
-		calculateEmployeeBonus(10,yearlySalary);
+		calculateEmployeeBonus(10,10000.00);
 
 	}
 	/*
