@@ -53,7 +53,7 @@ public class DataReader {
 				}
 				connect.insertDataFromStringToSqlTable(a, "Car", "Info");
 			}
-    catch(Exception e){
+    //catch(Exception e){
 
 			}
 			finally{

@@ -72,7 +72,6 @@ A. Big-(o)  nation is used to describe the performance or complexity of an algor
 to describe the execution time required or the space used by an algorithm.
 Outlined different kind of sorting algorithm with time complexity?
 A.Insertion sort,selection sort,mergesort, Heapsort, quick sort, shell short, bucket sort.
-
 Draw a table with time complexity in which it will summarize all the data structure feature's advantages and disadvantages.
   a)In terms of Accessing element.
   b)In terms of Inserting element.
