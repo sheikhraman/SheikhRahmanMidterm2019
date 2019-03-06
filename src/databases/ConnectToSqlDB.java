@@ -1,5 +1,6 @@
 package databases;
 
+import jdk.nashorn.internal.runtime.arrays.ArrayData;
 import parser.Student;
 
 import java.io.FileInputStream;
@@ -22,7 +23,7 @@ public class ConnectToSqlDB {
     public static PreparedStatement ps = null;
     public static ResultSet resultSet = null;
 
-    public static Properties loadProperties() throws IOException{
+    public static Properties loadProperties() throws IOException {
         Properties prop = new Properties();
         InputStream ism = new FileInputStream("src/secret.properties");
         prop.load(ism);
@@ -37,11 +38,55 @@ public class ConnectToSqlDB {
         String userName = prop.getProperty("MYSQLJDBC.userName");
         String password = prop.getProperty("MYSQLJDBC.password");
         Class.forName(driverClass);
-        connect = DriverManager.getConnection(url,userName,password);
+        connect = DriverManager.getConnection(url, userName, password);
         System.out.println("Database is connected");
         return connect;
     }
 
+    public void createTableFromStringToMySqul(String tableName, String columnName) {
+        try {
+            connectToSqlDatabase();
+            ps = connect.prepareStatement("DROP TABLE IF EXISTS " + tableName + ";");
+            ps.executeUpdate();
+            ps = connect.prepareStatement("CREATE TABLE" + tableName + "(ID int(11) NOT NULL AUTO_INCREMENT," + columnName + "varchar(2500) DEFAULT NULL,PRIMARY KEY('ID'))");
+            ps.executeUpdate();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void createTableFromStringToMySqul(String tableName, String columnName1, String columnName2) {
+        try{
+        connectToSqlDatabase();
+        ps = connect.prepareStatement("DROP TABLE IF EXISTS" + tableName + ";");
+        ps.executeUpdate();
+        ps = connect.prepareStatement("CREATE TABLE " + tableName + "(ID int (11) NOT NULL AUTO_INCREMENT," + columnName1 + "varchar(2500) DEFAULT NULL," + columnName2 + "varchar(2500) DEFAULT NULL,PRIMARY KEY(ID));");
+        ps.executeUpdate();
+    }
+    catch(
+    IOException e)
+
+    {
+        e.printStackTrace();
+    }
+    catch(
+    SQLException s)
+
+    {
+        s.printStackTrace();
+    }
+    catch(
+    ClassNotFoundException cls)
+
+    {
+        cls.printStackTrace();
+    }
+
+}
     public List<String> readDataBase(String tableName, String columnName)throws Exception{
         List<String> data = new ArrayList<String>();
 
