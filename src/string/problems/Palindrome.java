@@ -7,5 +7,27 @@ public class Palindrome {
           Palindrome. So write java code to check if a given String is Palindrome or not.
          */
 
+        String inputString ="DAD";
+        int lenght =inputString.length();
+        int i, start,end,middle;
+        start =0;
+        end =lenght -1;
+        middle =(start+end)/2;
+        for (i=start;i<=middle;i++){
+            if(inputString.charAt(start) == inputString.charAt(end)){
+                start++;
+                end--;
+            }
+            else {
+                break;
+            }
+        }
+        if(i == middle +1){
+            System.out.println("Successful");
+        }
+        else {
+            System.out.println(" Not successful");
+        }
+
     }
 }
