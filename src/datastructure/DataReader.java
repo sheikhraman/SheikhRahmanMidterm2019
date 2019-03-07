@@ -29,63 +29,76 @@ public class DataReader {
 		 * Use For Each loop/while loop/Iterator to retrieve data.
 		 */
 
-		String textFile = System.getProperty("user.dir") + "/src/data/self-driving-car.txt";
-		FileReader fr = null;
-		try {
-			fr = new FileReader(textFile);
-			System.out.println("File found");
-		} catch (FileNotFoundException e) {
-			System.out.println("File did not found");
-		}
-		Stack<String> Stack = new Stack<String>();
-		List<String> List = new LinkedList<String>();
-		BufferedReader br = new BufferedReader(fr);
-		String a;
-		ConnectToSqlDB connect = new ConnectToSqlDB();
-		connect.createTableFromStringToMySqul("Car", "Info");
-		try {
-			while ((a = br.readLine()) != null) {
-				System.out.println(a);
-				String[] word = a.split("");
-				for (int i = 0; i < word.length; i++) {
-					Stack.push(word[i]);
-					List.add(word[i]);
-				}
-				connect.insertDataFromStringToSqlTable(a, "Car", "Info");
-			}
-    //catch(Exception e){
+		String textFile = System.getProperty("user.dir") + "/src/data/self-driving-car";//.txt";
+		System.out.println(textFile);
+		Stack<String> stack = new Stack<String>();
 
-			}
-			finally{
-				try{br.close();
-					fr.close();
-			}
-				catch (IOException e1){
-					e1.printStackTrace();
-				}
+		LinkedList<String> list = new LinkedList<String>();
+
+		BufferedReader br = null;
+
+		String fileText = null;
+
+		try {
+
+			FileReader fr = new FileReader(textFile);
+
+			br = new BufferedReader(fr);
+
+		}catch (FileNotFoundException e) {
+
+			System.out.println(e);
 
 		}
-			Stack.push("Dhaka");
-			Stack.pop();
-			Stack.peek();
-		Stack.search("Dhaka");
-			//read from database;
-			List<String > text =connect.readDataBase("Car","Info");
-           for(String x: text){
-           	System.out.println(x);
-		   }
-           //retrive as fifo order
-			for(int  b=0;b<List.size();b++){
-				System.out.println(List.get(b));
-			}
-			//retrive fifo integer
-			Iterator<String> iterator =List.iterator();
-			while (iterator.hasNext()){
-				System.out.println(iterator.hasNext() +"");
-			}
-			//retriving using while loop
-			while (!Stack.isEmpty()){
-				System.out.println(Stack.pop()+"");
-			}
+
+		try {
+
+			if (br.ready())
+
+				fileText = br.readLine();
+
+		}catch (IOException e) {
+
+			System.out.println(e);
+
+		}
+
+		catch (NullPointerException e)
+
+		{
+
+			System.out.println(e);
+
+		}
+
+		String [] words = fileText.split(" ");
+
+		for(int i=0;i<words.length;i++) {
+
+			System.out.println(words[i]);
+
+			stack.push(words[i]);
+
+			list.add(words[i]);
+
+		}
+
+		System.out.println("Stack Peek:  "+  stack.peek());
+
+		System.out.println("Stack Pop:  "+  stack.pop());
+
+		System.out.println("Stack Search:  "+stack.search("Google"));
+
+
+
+		Iterator it = list.iterator();
+
+		System.out.println("Linked List Display:");
+
+		while (it.hasNext())
+
+			System.out.println(it.next());
+
+
 	}
 }
