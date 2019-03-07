@@ -68,7 +68,7 @@ public class DataReader {
 			Stack.push("Dhaka");
 			Stack.pop();
 			Stack.peek();
-			Stack.search("Dhaka");
+		Stack.search("Dhaka");
 			//read from database;
 			List<String > text =connect.readDataBase("Car","Info");
            for(String x: text){

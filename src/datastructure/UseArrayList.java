@@ -34,18 +34,18 @@ public class UseArrayList {
 		}
 		Collections.sort(list);
 		System.out.println(list);
-		List al =new ArrayList();
-		al=list;
-		ConnectToSqlDB.connectToSqlDatabase();
-		ConnectToSqlDB ar = new ConnectToSqlDB();
-		ar.createTableFromStringToMySqul("Array_list","listElement");
-		ar.insertDataFromArrayListToSqlTable(al,"Array_list","ALMethods");
-		List<String> number = ar.readDataBase("Array_list","ALMethods");
-		for (String str:number){
-			System.out.println(str);
+		//List al =new ArrayList();
+		//al=list;
+//		ConnectToSqlDB.connectToSqlDatabase();
+//		ConnectToSqlDB ar = new ConnectToSqlDB();
+//		ar.createTableFromStringToMySqul("Array_list","listElement");
+//		ar.insertDataFromArrayListToSqlTable(al,"Array_list","ALMethods");
+//		List<String> number = ar.readDataBase("Array_list","ALMethods");
+		//for (String str:number){
+			//System.out.println(str);
 		}
 	
 
 	}
 
-}
+//}
