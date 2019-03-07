@@ -29,7 +29,7 @@ public class DetermineLargestWord {
             }
           map.put(max,st);
             for(Map.Entry entry: map.entrySet())
-                System.out.println(entry.getKey()+ ""+entry.getValue());
+                System.out.println(entry.getKey()+ ": "+entry.getValue());
         return map;
     }
 }
