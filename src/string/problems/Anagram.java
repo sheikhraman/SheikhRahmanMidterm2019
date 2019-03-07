@@ -20,6 +20,8 @@ public class Anagram {
         if(st.length()  !=sts.length()){
             return  false;
         }
+        st=st.toUpperCase();
+        sts=sts.toUpperCase();
         char[]strs=st.toCharArray();
         Arrays.sort(strs);
         char[] starss =sts.toCharArray();
