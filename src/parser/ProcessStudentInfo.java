@@ -101,7 +101,7 @@ public class ProcessStudentInfo {
 			System.out.println(st.getFirstName() + " " + st.getLastName() + " " + st.getScore() + " " + st.getId());
 		}
 		//Retrieve Selenium students from Database
-		
+
 	}
 
 }
